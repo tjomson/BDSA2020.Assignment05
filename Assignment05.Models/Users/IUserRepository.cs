@@ -5,7 +5,7 @@ namespace Assignment05.Models
 {
     public interface IUserRepository
     {
-        Task<(Response response, int taskId)> CreateAsync(UserCreateDTO user);
+        Task<(Response response, int userId)> CreateAsync(UserCreateDTO user);
         IQueryable<UserListDTO> ReadAsync();
         Task<UserDetailsDTO> ReadAsync(int userId);
         Task<Response> UpdateAsync(UserUpdateDTO user);

@@ -15,7 +15,8 @@ namespace Assignment05.Models.Tests
 
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, Name = "user1", EmailAddress = "user1@kanban.com" },
-                new User { Id = 2, Name = "user2", EmailAddress = "user2@kanban.com" }
+                new User { Id = 2, Name = "user2", EmailAddress = "user2@kanban.com" },
+                new User { Id = 3, Name = "fired", EmailAddress = "notasks@kanban.com"}
             );
 
             modelBuilder.Entity<Tag>().HasData(
