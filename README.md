@@ -70,14 +70,14 @@ Test and implement the `CreateThumbnails` method with the following specificatio
 
 ## Software Engineering
 
-Note: the two following exercises could be used in class to further discuss practical examples of the SOLID principles.  If you wish to present and discuss your examples discussed in class, I would be happy to include an hour in one of the future lectures.  Therefore, if the above sounds interesting, please do not hesitate to contact me.
+Note: the two following exercises could be used in class to further discuss additional examples of the SOLID principles.  If you wish to present and discuss your examples discussed in class, I would be happy to include an hour in one of the future lectures.  Therefore, if the above sounds interesting, please do not hesitate to contact me.  The idea would be to have a brief slot in which you would present your example of one or more of the SOLID principles.
 
 ### Exercise 1
 
 For each of the SOLID principles, provide an example through either a UML diagram or a code listing that showcases the violation of the specific principle.
-_Note:_ the examples do not need to be too sophisticated.
+_Note:_ the examples do not need to be sophisticated.
 
 ### Exercise 2
 
 For each of the examples provided for SE-1, provide a refactored solution as either a UML diagram or a code listing that showcases a possible solution respecting the principle violeted.
-_Note:_ the examples do not need to be too sophisticated.
+_Note:_ the examples do not need to be sophisticated.
