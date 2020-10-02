@@ -1,21 +1,23 @@
+using System.Collections.Generic;
 using System.Linq;
 using Assignment05.Entities;
 using Microsoft.EntityFrameworkCore;
 using static Assignment05.Entities.State;
 using static Assignment05.Models.Response;
+using System.Threading.Tasks;
 
 namespace Assignment05.Models
 {
     public class TagRepository : ITagRepository
     {
-        private readonly IKanbanContext _context;
+        private IKanbanContext _context;
 
         public TagRepository(IKanbanContext context)
         {
             _context = context;
         }
 
-        public (Response response, int taskId) Create(TagCreateDTO tag)
+        public async System.Threading.Tasks.Task<(Response response, int taskId)> Create(TagCreateDTO tag)
         {
             var tagExists = _context.Tags.Any(t => t.Name == tag.Name);
 
@@ -30,7 +32,7 @@ namespace Assignment05.Models
             };
 
             _context.Tags.Add(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return (Created, entity.Id);
         }
@@ -50,7 +52,7 @@ namespace Assignment05.Models
                    };
         }
 
-        public TagDTO Read(int tagId)
+        public async System.Threading.Tasks.Task<TagDTO> Read(int tagId)
         {
             var tags = from t in _context.Tags
                        where t.Id == tagId
@@ -65,10 +67,10 @@ namespace Assignment05.Models
                            Removed = t.Tasks.Count(a => a.Task.State == New)
                        };
 
-            return tags.FirstOrDefault();
+            return await tags.FirstOrDefaultAsync();
         }
 
-        public Response Update(TagUpdateDTO tag)
+        public async System.Threading.Tasks.Task<Response> Update(TagUpdateDTO tag)
         {
             var tagExists = _context.Tags.Any(t => t.Id != tag.Id && t.Name == tag.Name);
 
@@ -86,12 +88,12 @@ namespace Assignment05.Models
 
             entity.Name = tag.Name;
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Updated;
         }
 
-        public Response Delete(int tagId, bool force = false)
+        public async System.Threading.Tasks.Task<Response> Delete(int tagId, bool force = false)
         {
             var entity = _context.Tags.Include(t => t.Tasks).FirstOrDefault(t => t.Id == tagId);
 
@@ -106,7 +108,7 @@ namespace Assignment05.Models
             }
 
             _context.Tags.Remove(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Deleted;
         }

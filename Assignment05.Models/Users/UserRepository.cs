@@ -1,7 +1,7 @@
 using System.Linq;
 using System;
 using System.Threading.Tasks;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using Assignment05.Entities;
 
 using System.Collections.Generic;
@@ -69,17 +69,45 @@ namespace Assignment05.Models
 
         public IQueryable<UserListDTO> ReadAsync()
         {
-            throw new System.NotImplementedException();
+            var ids = from user in _context.Users
+                        select user.Id;
+            
+            var asList = ids.ToList();
+
+            var users = from user in _context.Users
+                        where asList.Contains(user.Id)
+                        select ReadAsync(user.Id).Result;
+
+            return users;
+        }
+        public async Task<UserDetailsDTO> ReadAsync(int userId)
+        {
+            var userDetails = from h in _context.Users
+                         where h.Id == userId
+                         select new UserDetailsDTO
+                         {
+                             Id = h.Id,
+                             Name = h.Name,
+                             EmailAddress = h.EmailAddress,
+                             Tasks = h.Tasks.Select(t => new UserTaskDTO{Id = t.Id, Title = t.Title, State = t.State}).ToList()
+                         };
+
+            return await userDetails.FirstOrDefaultAsync();
         }
 
-        public Task<UserDetailsDTO> ReadAsync(int userId)
+        public async Task<Response> UpdateAsync(UserUpdateDTO user)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Response> UpdateAsync(UserUpdateDTO user)
-        {
-            throw new System.NotImplementedException();
+            var userQuery = from users in _context.Users where users.Id == user.Id select users;
+            if (!userQuery.Any()) return Response.NotFound;
+            else
+            {
+                var thisUser = userQuery.FirstOrDefault();
+                thisUser.Name = user.Name;
+                thisUser.EmailAddress = user.EmailAddress;
+                thisUser.Id = user.Id;
+                await _context.SaveChangesAsync();
+                return Response.Updated;
+            }
         }
     }
 

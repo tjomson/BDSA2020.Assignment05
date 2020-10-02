@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Assignment05.Entities
 {
@@ -10,5 +12,6 @@ namespace Assignment05.Entities
         DbSet<User> Users { get; set; }
 
         int SaveChanges();
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

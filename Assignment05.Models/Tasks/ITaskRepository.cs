@@ -1,13 +1,14 @@
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Assignment05.Models
 {
     public interface ITaskRepository
     {
-        (Response response, int createdId) Create(TaskCreateDTO task);
+        Task<(Response response, int createdId)> Create(TaskCreateDTO task);
         IQueryable<TaskListDTO> Read(bool includeRemoved = false);
-        TaskDetailsDTO Read(int taskId);
-        Response Update(TaskUpdateDTO task);
-        Response Delete(int taskId);
+        Task<TaskDetailsDTO> Read(int taskId);
+        Task<Response> Update(TaskUpdateDTO task);
+        Task<Response> Delete(int taskId);
     }
 }

@@ -1,13 +1,14 @@
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Assignment05.Models
 {
     public interface ITagRepository
     {
-        (Response response, int taskId) Create(TagCreateDTO tag);
+        Task<(Response response, int taskId)> Create(TagCreateDTO tag);
         IQueryable<TagDTO> Read();
-        TagDTO Read(int tagId);
-        Response Update(TagUpdateDTO tag);
-        Response Delete(int tagId, bool force = false);
+        Task<TagDTO> Read(int tagId);
+        Task<Response> Update(TagUpdateDTO tag);
+        Task<Response> Delete(int tagId, bool force = false);
     }
 }

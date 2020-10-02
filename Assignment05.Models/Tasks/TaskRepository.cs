@@ -4,26 +4,27 @@ using Assignment05.Entities;
 using Microsoft.EntityFrameworkCore;
 using static Assignment05.Entities.State;
 using static Assignment05.Models.Response;
+using System.Threading.Tasks;
 
 namespace Assignment05.Models
 {
     public class TaskRepository : ITaskRepository
     {
-        private readonly IKanbanContext _context;
+        private IKanbanContext _context;
 
         public TaskRepository(IKanbanContext context)
         {
             _context = context;
         }
 
-        public (Response response, int createdId) Create(TaskCreateDTO task)
+        public async System.Threading.Tasks.Task<(Response response, int createdId)> Create(TaskCreateDTO task)
         {
             if (task.AssignedToId.HasValue && !UserExists(task.AssignedToId.Value))
             {
                 return (Conflict, 0);
             }
 
-            var entity = new Task
+            var entity = new Entities.Task
             {
                 Title = task.Title,
                 Description = task.Description,
@@ -32,12 +33,12 @@ namespace Assignment05.Models
             };
 
             _context.Tasks.Add(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return (Created, entity.Id);
         }
 
-        public TaskDetailsDTO Read(int taskId)
+        public async System.Threading.Tasks.Task<TaskDetailsDTO> Read(int taskId)
         {
             var task = from t in _context.Tasks
                        where t.Id == taskId
@@ -52,7 +53,7 @@ namespace Assignment05.Models
                            Tags = t.Tags.ToDictionary(a => a.TagId, a => a.Tag.Name)
                        };
 
-            return task.FirstOrDefault();
+            return await task.FirstOrDefaultAsync();
         }
 
         public IQueryable<TaskListDTO> Read(bool includeRemoved = false)
@@ -70,7 +71,7 @@ namespace Assignment05.Models
                    };
         }
 
-        public Response Update(TaskUpdateDTO task)
+        public async System.Threading.Tasks.Task<Response> Update(TaskUpdateDTO task)
         {
             var entity = _context.Tasks.Include(t => t.Tags).FirstOrDefault(t => t.Id == task.Id);
 
@@ -90,12 +91,11 @@ namespace Assignment05.Models
             entity.State = task.State;
             entity.Tags = MapTags(task.Id, task.Tags).ToList();
 
-            _context.SaveChanges();
-
+            await _context.SaveChangesAsync();
             return Updated;
         }
 
-        public Response Delete(int taskId)
+        public async System.Threading.Tasks.Task<Response> Delete(int taskId)
         {
             var entity = _context.Tasks.Find(taskId);
 
@@ -121,7 +121,7 @@ namespace Assignment05.Models
                     break;
             }
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return response;
         }

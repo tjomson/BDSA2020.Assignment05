@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Assignment05.Entities;
 using Assignment05.Models;
@@ -91,6 +92,48 @@ namespace Assignment05.Models.Tests
 
             // Test that a task is unassigned
             Assert.Null(_context.Tasks.Find(2).AssignedTo);
+        }
+
+        [Fact]
+        public async void ReadAsync_given_proper_user()
+        {
+            var response = await _repository.ReadAsync(1);
+
+            Assert.Equal("user1", response.Name);
+            Assert.Equal("user1@kanban.com", response.EmailAddress);
+            Assert.Equal(2, response.Tasks.Count());
+        }
+
+        [Fact]
+        public async void ReadAsync_given_non_existing_user()
+        {
+            var response = await _repository.ReadAsync(4);
+
+            Assert.Null(response);
+        }
+
+/*
+        [Fact]
+        public async void ReadAsync_given_no_input_returns_all(){
+            var response = await _repository.ReadAsync();
+        }*/
+
+        [Fact]
+        public async void UpdateAsync_updates_user()
+        {
+            var userDTO = new UserUpdateDTO
+            {
+                Id=1,
+                Name="newname",
+                EmailAddress="new@kanban.com"
+            };
+
+            var response = await _repository.UpdateAsync(userDTO);
+            var updatedUser = _context.Users.Find(1);
+
+            Assert.Equal(Response.Updated, response);
+            Assert.Equal(updatedUser.Name, "newname");
+            Assert.Equal(updatedUser.EmailAddress, "new@kanban.com");
         }
     }
 }
