@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\microsoft.net.test.sdk\16.3.0\build\netcoreapp1.0" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\microsoft.net.test.sdk\16.7.1\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\microsoft.testplatform.testhost\16.3.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\microsoft.testplatform.testhost\16.3.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\Thomas Kilbak\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Thomas Kilbak\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_BDSA2020.Assignment05.-1815401882.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Thomas Kilbak\Documents\GitHub\BDSA2020.Assignment05" t="IncludeFlat">
+      <e p="Assignment05.App" t="IncludeRecursive">
+        <e p="Assignment05.App.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="images" t="Include">
+          <e p="file000132701536.jpg" t="Include" />
+          <e p="file000267747089.jpg" t="Include" />
+          <e p="file000267804564.jpg" t="Include" />
+          <e p="file000325161223.jpg" t="Include" />
+          <e p="file000466623310.jpg" t="Include" />
+          <e p="file000477760838.jpg" t="Include" />
+          <e p="file00053809264.jpg" t="Include" />
+          <e p="file000541344089.jpg" t="Include" />
+          <e p="file000555007525.jpg" t="Include" />
+        </e>
+        <e p="IPictureModule.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Assignment05.App.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ParallelOperations.cs" t="Include" />
+        <e p="PictureModule.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+      </e>
+      <e p="Assignment05.App.Tests" t="IncludeRecursive">
+        <e p="Assignment05.App.Tests.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Assignment05.App.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="UnitTest1.cs" t="Include" />
+      </e>
+      <e p="Assignment05.Entities" t="IncludeRecursive">
+        <e p="Assignment05.Entities.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IKanbanContext.cs" t="Include" />
+        <e p="KanbanContext.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Assignment05.Entities.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="State.cs" t="Include" />
+        <e p="Tag.cs" t="Include" />
+        <e p="Task.cs" t="Include" />
+        <e p="TaskTag.cs" t="Include" />
+        <e p="User.cs" t="Include" />
+      </e>
+      <e p="Assignment05.Models" t="IncludeRecursive">
+        <e p="Assignment05.Models.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Assignment05.Models.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Response.cs" t="Include" />
+        <e p="Tags" t="Include">
+          <e p="ITagRepository.cs" t="Include" />
+          <e p="TagCreateDTO.cs" t="Include" />
+          <e p="TagDTO.cs" t="Include" />
+          <e p="TagRepository.cs" t="Include" />
+          <e p="TagUpdateDTO.cs" t="Include" />
+        </e>
+        <e p="Tasks" t="Include">
+          <e p="ITaskRepository.cs" t="Include" />
+          <e p="TaskCreateDTO.cs" t="Include" />
+          <e p="TaskDetailsDTO.cs" t="Include" />
+          <e p="TaskListDTO.cs" t="Include" />
+          <e p="TaskRepository.cs" t="Include" />
+          <e p="TaskUpdateDTO.cs" t="Include" />
+        </e>
+        <e p="Users" t="Include">
+          <e p="IUserRepository.cs" t="Include" />
+          <e p="UserCreateDTO.cs" t="Include" />
+          <e p="UserDetailsDTO.cs" t="Include" />
+          <e p="UserListDTO.cs" t="Include" />
+          <e p="UserRepository.cs" t="Include" />
+          <e p="UserTaskDTO.cs" t="Include" />
+          <e p="UserUpdateDTO.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Assignment05.Models.Tests" t="IncludeRecursive">
+        <e p="Assignment05.Models.Tests.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="KanbanTestContext.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Assignment05.Models.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TagRepositoryTests.cs" t="Include" />
+        <e p="TaskRepositoryTests.cs" t="Include" />
+        <e p="UserRepositoryTests.cs" t="Include" />
+      </e>
+      <e p="BDSA2020.Assignment05.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
