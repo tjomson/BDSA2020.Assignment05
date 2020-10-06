@@ -17,15 +17,17 @@ namespace Assignment05.App
             {
                squares.Add(i * i); 
             });
+            
+            return squares.OrderBy(i => i).ToArray();
 
-            var returnable = new List<long>(squares);
-
-            return returnable;
         }
-        
+
         public static IEnumerable<long> SquaresLinq(int start, int count) =>
-  
-        throw new NotImplementedException();
+            (from item in Enumerable.Range(start, start + count - 1).AsParallel()
+              select (long) item * item).ToArray().OrderBy(i => i);
+
+            //As one-liner
+            //Enumerable.Range(start, start + count).AsParallel().Select(l => (long) l * l).ToArray().OrderBy(i => i);
 
         public static void CreateThumbnails(IPictureModule resizer, IEnumerable<string> imageFiles, string outputFolder, Size size)
         {

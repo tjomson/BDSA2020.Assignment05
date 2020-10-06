@@ -10,16 +10,34 @@ namespace Assignment05.App.Tests
     {
         [Theory]
         [InlineData(2, 5, new long[]{4,9,16,25})]
+        [InlineData(1, 5, new long[]{1,4,9,16,25})]
         public void Test_Squares(long lowerBound, long upperBound, long[] expected)
         {
-            var asList = expected.ToList();
             var actual = ParallelOperations.Squares(lowerBound, upperBound);
 
+            var counter = 0;
             foreach (var square in actual)
             {
-                Assert.Contains(square, asList);
+                Assert.Equal(expected[counter], square);
+                counter++;
             }
-            Assert.Equal(4, actual.Count);
+            Assert.Equal(expected.Length, counter);
+            
+        }
+
+        [Theory]
+        [InlineData(1, 5, new long[]{1,4,9,16,25})]
+        public void Test_Squares_Linq(int start, int count, long[] expected)
+        {
+            var actual = ParallelOperations.SquaresLinq(start, count);
+
+            var counter = 0;
+            foreach (var square in actual)
+            {
+                Assert.Equal(expected[counter], square);
+                counter++;
+            }
+            Assert.Equal(expected.Length, counter);
             
         }
     }
