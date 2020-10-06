@@ -31,7 +31,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BDSA2020.Assignment05/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BDSA2020.Assignment05/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BDSA2020.Assignment05/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BDSA2020.Assignment05/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment05.App.Tests/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment05.App.Tests/UnitTest1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment05.App/Assignment05.App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment05.App/Assignment05.App.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment05.App/ParallelOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment05.App/ParallelOperations.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +51,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assignment05.App/Program.cs" />
-        <option value="$PROJECT_DIR$/Assignment05.App.Tests/UnitTest1.cs" />
         <option value="$PROJECT_DIR$/Assignment05.App/ParallelOperations.cs" />
+        <option value="$PROJECT_DIR$/Assignment05.App/PictureModule.cs" />
+        <option value="$PROJECT_DIR$/Assignment05.App.Tests/UnitTest1.cs" />
       </list>
     </option>
   </component>
@@ -100,7 +100,7 @@
       <updated>1601633501340</updated>
       <workItem from="1601633526658" duration="462000" />
       <workItem from="1601634092314" duration="21849000" />
-      <workItem from="1601971096980" duration="5768000" />
+      <workItem from="1601971096980" duration="7776000" />
     </task>
     <servers />
   </component>

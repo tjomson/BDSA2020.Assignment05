@@ -35,7 +35,7 @@ namespace Assignment05.App
             {
                 var directory = "./../../../../Assignment05.App/";
                 resizer.Resize(directory + "images/" + currentFile + ".jpg",
-                    directory + outputFolder + "/" + currentFile + ".png", 
+                    directory + outputFolder + "/" + currentFile + ".jpg", 
                     size);
             });
         }

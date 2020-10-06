@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using Assignment05.App;
+using SixLabors.ImageSharp;
 using Xunit;
+using Size = System.Drawing.Size;
 
 namespace Assignment05.App.Tests
 {
@@ -60,6 +61,11 @@ namespace Assignment05.App.Tests
             };
             ParallelOperations.CreateThumbnails(pictureModule, imageFiles, "outputFolder", new Size(600, 600));
             
+            foreach (var file in imageFiles)
+            {
+                var image = Image.Load("./../../../../Assignment05.App/outputFolder/" + file + ".jpg");
+                Assert.True(image.Height == 600 || image.Width == 600);
+            }
             
         }
     }
