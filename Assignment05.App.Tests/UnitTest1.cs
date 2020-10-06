@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using Assignment05.App;
 using Xunit;
@@ -38,6 +39,27 @@ namespace Assignment05.App.Tests
                 counter++;
             }
             Assert.Equal(expected.Length, counter);
+            
+        }
+        
+        [Fact]
+        public void Test_Create_Thumbnails()
+        {
+            var pictureModule = new PictureModule();
+            var imageFiles = new List<string>()
+            {
+                "file00053809264",
+                "file000132701536",
+                "file000267747089",
+                "file000267804564",
+                "file000325161223",
+                "file000466623310",
+                "file000477760838",
+                "file000541344089",
+                "file000555007525"
+            };
+            ParallelOperations.CreateThumbnails(pictureModule, imageFiles, "outputFolder", new Size(600, 600));
+            
             
         }
     }

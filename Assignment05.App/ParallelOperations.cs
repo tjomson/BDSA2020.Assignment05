@@ -31,7 +31,13 @@ namespace Assignment05.App
 
         public static void CreateThumbnails(IPictureModule resizer, IEnumerable<string> imageFiles, string outputFolder, Size size)
         {
-            throw new NotImplementedException();
+            Parallel.ForEach(imageFiles, (currentFile) =>
+            {
+                var directory = "./../../../../Assignment05.App/";
+                resizer.Resize(directory + "images/" + currentFile + ".jpg",
+                    directory + outputFolder + "/" + currentFile + ".png", 
+                    size);
+            });
         }
     }
 }

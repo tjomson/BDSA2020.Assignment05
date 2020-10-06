@@ -42,6 +42,17 @@
             </e>
           </e>
         </e>
+        <e p="outputFolder" t="Include">
+          <e p="file000132701536.png" t="Include" />
+          <e p="file000267747089.png" t="Include" />
+          <e p="file000267804564.png" t="Include" />
+          <e p="file000325161223.png" t="Include" />
+          <e p="file000466623310.png" t="Include" />
+          <e p="file000477760838.png" t="Include" />
+          <e p="file00053809264.png" t="Include" />
+          <e p="file000541344089.png" t="Include" />
+          <e p="file000555007525.png" t="Include" />
+        </e>
         <e p="ParallelOperations.cs" t="Include" />
         <e p="PictureModule.cs" t="Include" />
         <e p="Program.cs" t="Include" />
